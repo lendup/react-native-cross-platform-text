@@ -3,8 +3,36 @@
   "version": "1.0.0",
   "description": "Shim consolidating Android and iOS font family and font weight APIs into a single, easy-to-use, crossplatform API",
   "main": "index.js",
-  "repository": "https://github.com/lendup/react-native-text",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lendup/react-native-text"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "text",
+    "fontFamily",
+    "fontWeight",
+    "cross-platform",
+    "cross platform",
+    "android",
+    "ios"
+  ],
   "author": "LendUp",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "peerDependencies": {
+    "react": ">=15.0.0",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "babel-eslint": "6.1.2",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb": "14.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-jest": "19.0.1",
+    "eslint-plugin-jsx-a11y": "4.0.0",
+    "eslint-plugin-react": "6.10.0",
+    "jest": "20.0.4"
+  }
 }
