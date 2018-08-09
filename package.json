@@ -1,0 +1,10 @@
+{
+  "name": "react-native-text",
+  "version": "1.0.0",
+  "description": "Shim consolidating Android and iOS font family and font weight APIs into a single, easy-to-use, crossplatform API",
+  "main": "index.js",
+  "repository": "https://github.com/lendup/react-native-text",
+  "author": "LendUp",
+  "license": "MIT",
+  "private": false
+}
