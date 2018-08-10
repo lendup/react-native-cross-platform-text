@@ -1,13 +1,6 @@
-import React from 'react';
-import {
-  Text as ReactNativeText,
-  TextInput as ReactNativeTextInput,
-  Animated,
-  Platform,
-  StyleSheet,
-} from 'react-native';
+import { Platform } from 'react-native';
 
-export const getFontStyleForWeight = (fontWeight, fontFamily) => {
+const getFontStyleForWeight = (fontWeight, fontFamily) => {
   if (Platform.OS === 'ios') return { fontFamily, fontWeight };
   switch (fontWeight) {
     case 'normal': return { fontFamily: `${fontFamily}-Regular`, fontWeight: undefined };
@@ -25,26 +18,4 @@ export const getFontStyleForWeight = (fontWeight, fontFamily) => {
   }
 };
 
-export const FontStyleWrapper = ({ style, children }) => {
-  const flatStyle = StyleSheet.flatten(style);
-  const fontStyleForWeight = getFontStyleForWeight(flatStyle.fontWeight, flatStyle.fontFamily);
-  return children([flatStyle, fontStyleForWeight]);
-};
-
-export const Text = ({ style, ...props }) => (
-  <FontStyleWrapper style={style}>
-    {fontStyle => <ReactNativeText style={fontStyle} {...props} />}
-  </FontStyleWrapper>
-);
-
-export const TextInput = ({ style, ...props }) => (
-  <FontStyleWrapper style={style}>
-    {fontStyle => <ReactNativeTextInput style={fontStyle} {...props} />}
-  </FontStyleWrapper>
-);
-
-export const AnimatedText = ({ style, ...props }) => (
-  <FontStyleWrapper style={style}>
-    {fontStyle => <Animated.Text style={fontStyle} {...props} />}
-  </FontStyleWrapper>
-);
+export default getFontStyleForWeight;
