@@ -1,8 +1,12 @@
 import React from 'react';
-import { Text as ReactNativeText } from 'react-native';
+import { Text as ReactNativeText, TextStyle } from 'react-native';
 import FontStyleWrapper from './FontStyleWrapper';
 
-const Text = ({ style, ...props }) => (
+interface TextProps {
+  style: TextStyle;
+}
+
+const Text = ({ style, ...props }: TextProps) => (
   <FontStyleWrapper style={style}>
     {fontStyle => <ReactNativeText style={fontStyle} {...props} />}
   </FontStyleWrapper>
