@@ -1,10 +1,10 @@
-import { StyleSheet, TextStyle, View } from 'react-native';
+import { StyleSheet, TextStyle, StyleProp, View } from 'react-native';
 import getFontStyleForWeight from './getFontStyleForWeight';
 
 
 interface FontStyleWrapperProps {
   children: (styles: TextStyle) => React.ReactElement<{}>;
-  style: TextStyle;
+  style: StyleProp<TextStyle>;
 }
 
 const FontStyleWrapper = ({ style, children }: FontStyleWrapperProps) => {

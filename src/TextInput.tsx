@@ -1,9 +1,9 @@
 import React from 'react';
-import { TextInput as ReactNativeTextInput, TextStyle } from 'react-native';
+import { TextInput as ReactNativeTextInput, TextStyle, StyleProp } from 'react-native';
 import FontStyleWrapper from './FontStyleWrapper';
 
 interface TextInputProps {
-  style: TextStyle;
+  style: StyleProp<TextStyle>;
 }
 
 const TextInput = ({ style, ...props }: TextInputProps) => (

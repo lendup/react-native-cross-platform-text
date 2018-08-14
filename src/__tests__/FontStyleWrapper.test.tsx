@@ -16,13 +16,13 @@ const mockStyles = StyleSheet.create({
   },
 });
 
-jest.mock('Platform');
+// jest.mock('Platform');
 
 it('iOS returns fontFamily and weight for normal', () => {
-  Platform.OS = 'ios';
-  const renderer = new ShallowRenderer();
+  // Platform.OS = 'ios';
+  const renderer = ShallowRenderer.createRenderer();
   renderer.render(
-    <FontStyleWrapper style={mockStyles.style}>
+    <FontStyleWrapper style={mockStyles.fontStyle}>
       {fontStyle => <Text style={fontStyle} />}
     </FontStyleWrapper>,
   );
@@ -30,10 +30,10 @@ it('iOS returns fontFamily and weight for normal', () => {
 });
 
 it('returns fontFamily and weight for normal', () => {
-  Platform.OS = 'android';
-  const renderer = new ShallowRenderer();
+  // Platform.OS = 'android';
+  const renderer = ShallowRenderer.createRenderer();
   renderer.render(
-    <FontStyleWrapper style={mockStyles.style}>
+    <FontStyleWrapper style={mockStyles.fontStyle}>
       {fontStyle => <Text style={fontStyle} />}
     </FontStyleWrapper>,
   );
@@ -41,28 +41,13 @@ it('returns fontFamily and weight for normal', () => {
 });
 
 it('flattens styles', () => {
-  const renderer = new ShallowRenderer();
+  const renderer = ShallowRenderer.createRenderer();
   renderer.render(
     <FontStyleWrapper
       style={[
         mockStyles.section,
         [mockStyles.container, mockStyles.fontStyle],
       ]}
-    >
-      {fontStyle => <Text style={fontStyle} />}
-    </FontStyleWrapper>,
-  );
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
-});
-
-it('passes through other props', () => {
-  const renderer = new ShallowRenderer();
-  renderer.render(
-    <FontStyleWrapper
-      style={mockStyles.style}
-      selectable
-      allowFontScaling={false}
-      onPress={() => {}}
     >
       {fontStyle => <Text style={fontStyle} />}
     </FontStyleWrapper>,
