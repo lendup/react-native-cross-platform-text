@@ -1,6 +1,6 @@
-import React from 'react';
+import * as React from 'react';
 import { Text, Platform, StyleSheet } from 'react-native';
-import ShallowRenderer from 'react-test-renderer/shallow';
+import * as ShallowRenderer from 'react-test-renderer/shallow';
 import FontStyleWrapper from '../FontStyleWrapper';
 
 const mockStyles = StyleSheet.create({

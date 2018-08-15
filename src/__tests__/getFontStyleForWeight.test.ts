@@ -1,12 +1,12 @@
 import { Platform } from 'react-native';
 import getFontStyleForWeight from '../getFontStyleForWeight';
 
-// jest.mock('Platform');
+jest.mock('Platform');
 
 const fontFamily = 'Arial';
 
 describe('android', () => {
-  // Platform.OS = 'android';
+  Platform.OS = 'android';
   it('returns fontFamily-Regular for normal', () => {
     expect(getFontStyleForWeight(fontFamily, 'normal'))
     .toEqual({
@@ -25,7 +25,7 @@ describe('android', () => {
 });
 
 describe('ios', () => {
-  // Platform.OS = 'ios';
+  Platform.OS = 'ios';
   it('returns fontFamily and weight for normal', () => {
     expect(getFontStyleForWeight(fontFamily, 'normal'))
     .toEqual({

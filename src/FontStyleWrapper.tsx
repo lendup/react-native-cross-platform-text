@@ -1,4 +1,5 @@
-import { StyleSheet, TextStyle, StyleProp, View } from 'react-native';
+import React from 'react';
+import { StyleSheet, TextStyle, StyleProp } from 'react-native';
 import getFontStyleForWeight from './getFontStyleForWeight';
 
 

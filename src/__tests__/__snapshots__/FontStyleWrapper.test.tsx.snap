@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`flattens styles 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "fontFamily": "Arial",
+      "fontWeight": "normal",
+      "margin": 20,
+      "paddingHorizontal": 10,
+    }
+  }
+/>
+`;
+
+exports[`iOS returns fontFamily and weight for normal 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "fontFamily": "Arial",
+      "fontWeight": "normal",
+    }
+  }
+/>
+`;
+
+exports[`returns fontFamily and weight for normal 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "fontFamily": "Arial",
+      "fontWeight": "normal",
+    }
+  }
+/>
+`;
