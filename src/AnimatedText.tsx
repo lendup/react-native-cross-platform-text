@@ -1,6 +1,6 @@
-import React from 'react';
-import { Animated, TextStyle, StyleProp } from 'react-native';
-import FontStyleWrapper from './FontStyleWrapper';
+import React from "react";
+import { Animated, StyleProp, TextStyle } from "react-native";
+import FontStyleWrapper from "./FontStyleWrapper";
 
 interface AnimatedTextProps {
   style: StyleProp<TextStyle>;

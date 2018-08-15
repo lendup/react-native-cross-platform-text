@@ -1,12 +1,12 @@
-import * as React from 'react';
-import { Text, Platform, StyleSheet } from 'react-native';
-import * as ShallowRenderer from 'react-test-renderer/shallow';
-import FontStyleWrapper from '../FontStyleWrapper';
+import * as React from "react";
+import { Platform, StyleSheet, Text } from "react-native";
+import * as ShallowRenderer from "react-test-renderer/shallow";
+import FontStyleWrapper from "../FontStyleWrapper";
 
 const mockStyles = StyleSheet.create({
   fontStyle: {
-    fontWeight: 'normal',
-    fontFamily: 'Arial',
+    fontWeight: "normal",
+    fontFamily: "Arial",
   },
   section: {
     paddingHorizontal: 10,
@@ -16,31 +16,31 @@ const mockStyles = StyleSheet.create({
   },
 });
 
-jest.mock('Platform');
+jest.mock("Platform");
 
-it('iOS returns fontFamily and weight for normal', () => {
-  Platform.OS = 'ios';
+it("iOS returns fontFamily and weight for normal", () => {
+  Platform.OS = "ios";
   const renderer = ShallowRenderer.createRenderer();
   renderer.render(
     <FontStyleWrapper style={mockStyles.fontStyle}>
-      {fontStyle => <Text style={fontStyle} />}
+      {(fontStyle) => <Text style={fontStyle} />}
     </FontStyleWrapper>,
   );
   expect(renderer.getRenderOutput()).toMatchSnapshot();
 });
 
-it('Android returns fontFamily-Regular and weight = undefined for normal', () => {
-  Platform.OS = 'android';
+it("Android returns fontFamily-Regular and weight = undefined for normal", () => {
+  Platform.OS = "android";
   const renderer = ShallowRenderer.createRenderer();
   renderer.render(
     <FontStyleWrapper style={mockStyles.fontStyle}>
-      {fontStyle => <Text style={fontStyle} />}
+      {(fontStyle) => <Text style={fontStyle} />}
     </FontStyleWrapper>,
   );
   expect(renderer.getRenderOutput()).toMatchSnapshot();
 });
 
-it('flattens styles', () => {
+it("flattens styles", () => {
   const renderer = ShallowRenderer.createRenderer();
   renderer.render(
     <FontStyleWrapper
@@ -49,7 +49,7 @@ it('flattens styles', () => {
         [mockStyles.container, mockStyles.fontStyle],
       ]}
     >
-      {fontStyle => <Text style={fontStyle} />}
+      {(fontStyle) => <Text style={fontStyle} />}
     </FontStyleWrapper>,
   );
   expect(renderer.getRenderOutput()).toMatchSnapshot();
