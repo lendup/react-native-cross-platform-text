@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Android returns fontFamily-Regular and weight = undefined for normal 1`] = `
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Object {
+      "fontFamily": "Arial-Regular",
+      "fontWeight": undefined,
+    }
+  }
+/>
+`;
+
 exports[`flattens styles 1`] = `
 <Text
   accessible={true}
@@ -7,8 +21,8 @@ exports[`flattens styles 1`] = `
   ellipsizeMode="tail"
   style={
     Object {
-      "fontFamily": "Arial",
-      "fontWeight": "normal",
+      "fontFamily": "Arial-Regular",
+      "fontWeight": undefined,
       "margin": 20,
       "paddingHorizontal": 10,
     }
@@ -17,20 +31,6 @@ exports[`flattens styles 1`] = `
 `;
 
 exports[`iOS returns fontFamily and weight for normal 1`] = `
-<Text
-  accessible={true}
-  allowFontScaling={true}
-  ellipsizeMode="tail"
-  style={
-    Object {
-      "fontFamily": "Arial",
-      "fontWeight": "normal",
-    }
-  }
-/>
-`;
-
-exports[`returns fontFamily and weight for normal 1`] = `
 <Text
   accessible={true}
   allowFontScaling={true}

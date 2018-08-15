@@ -16,10 +16,10 @@ const mockStyles = StyleSheet.create({
   },
 });
 
-// jest.mock('Platform');
+jest.mock('Platform');
 
 it('iOS returns fontFamily and weight for normal', () => {
-  // Platform.OS = 'ios';
+  Platform.OS = 'ios';
   const renderer = ShallowRenderer.createRenderer();
   renderer.render(
     <FontStyleWrapper style={mockStyles.fontStyle}>
@@ -29,8 +29,8 @@ it('iOS returns fontFamily and weight for normal', () => {
   expect(renderer.getRenderOutput()).toMatchSnapshot();
 });
 
-it('returns fontFamily and weight for normal', () => {
-  // Platform.OS = 'android';
+it('Android returns fontFamily-Regular and weight = undefined for normal', () => {
+  Platform.OS = 'android';
   const renderer = ShallowRenderer.createRenderer();
   renderer.render(
     <FontStyleWrapper style={mockStyles.fontStyle}>

@@ -22,7 +22,8 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "updateSnapshot": "jest --updateSnapshot"
   },
   "jest": {
     "preset": "react-native",
@@ -44,7 +45,8 @@
     "testPathIgnorePatterns": [
       "\\.snap$",
       "<rootDir>/node_modules/"
-    ]
+    ],
+    "clearMocks": true
   },
   "peerDependencies": {
     "react": ">=15.0.0",

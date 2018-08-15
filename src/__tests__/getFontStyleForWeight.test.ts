@@ -6,8 +6,9 @@ jest.mock('Platform');
 const fontFamily = 'Arial';
 
 describe('android', () => {
-  Platform.OS = 'android';
+  // Platform.OS = 'android';
   it('returns fontFamily-Regular for normal', () => {
+    Platform.OS = 'android';
     expect(getFontStyleForWeight(fontFamily, 'normal'))
     .toEqual({
       fontFamily: `${fontFamily}-Regular`,
@@ -16,6 +17,7 @@ describe('android', () => {
   });
 
   it('returns fontFamily-Black for 900', () => {
+    Platform.OS = 'android';
     expect(getFontStyleForWeight(fontFamily, '900'))
     .toEqual({
       fontFamily: `${fontFamily}-Black`,
@@ -25,8 +27,9 @@ describe('android', () => {
 });
 
 describe('ios', () => {
-  Platform.OS = 'ios';
+  // Platform.OS = 'ios';
   it('returns fontFamily and weight for normal', () => {
+    Platform.OS = 'ios';
     expect(getFontStyleForWeight(fontFamily, 'normal'))
     .toEqual({
       fontFamily,
@@ -35,6 +38,7 @@ describe('ios', () => {
   });
 
   it('returns fontFamily and weight for 900', () => {
+    Platform.OS = 'ios';
     expect(getFontStyleForWeight(fontFamily, '900'))
     .toEqual({
       fontFamily,
