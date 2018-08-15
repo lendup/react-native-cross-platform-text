@@ -1,14 +1,15 @@
 import React from "react";
-import { Animated, StyleProp, TextStyle } from "react-native";
+import { Animated } from "react-native";
 import FontStyleWrapper from "./FontStyleWrapper";
+import ExtendedTextStyles from "./types/ExtendedTextStyles";
 
 interface AnimatedTextProps {
-  style: StyleProp<TextStyle>;
+  style: ExtendedTextStyles;
 }
 
 const AnimatedText = ({ style, ...props }: AnimatedTextProps) => (
   <FontStyleWrapper style={style}>
-    {(fontStyle: TextStyle) => <Animated.Text style={fontStyle} {...props} />}
+    {(fontStyle) => <Animated.Text style={fontStyle} {...props} />}
   </FontStyleWrapper>
 );
 

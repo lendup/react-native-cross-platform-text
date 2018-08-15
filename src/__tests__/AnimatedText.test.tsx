@@ -1,8 +1,9 @@
 import * as React from "react";
-import { Platform, Animated, StyleSheet } from "react-native";
+import { Platform, Animated, StyleSheet, TextStyle } from "react-native";
 import * as ShallowRenderer from "react-test-renderer/shallow";
 import AnimatedText from "../AnimatedText";
 import mockStyles from './__mocks__/mockStyles';
+import ExtendedTextStyles from "../types/ExtendedTextStyles";
 
 jest.mock("Platform");
 
@@ -34,16 +35,26 @@ it("flattens styles", () => {
 });
 
 it("works with animated styles", () => {
-  const animatedValue = new Animated.Value(0);
+  const animatedValue = new Animated.Value(12);
   const animatedStyle = {
-    position: 'absolute',
-    // top: animatedValue,
-    color: 'red',
+    fontSize: animatedValue,
+    transform: [{ translateY: animatedValue }],
   };
   const renderer = ShallowRenderer.createRenderer();
   renderer.render(
     <AnimatedText
       style={[mockStyles.fontStyle, animatedStyle]}
+    >works with nested styles!</AnimatedText>
+  );
+  expect(renderer.getRenderOutput()).toMatchSnapshot();
+});
+
+it("passes Animated.Text props through", () => {
+  const renderer = ShallowRenderer.createRenderer();
+  renderer.render(
+    <AnimatedText
+      style={mockStyles.fontStyle}
+      
     >works with nested styles!</AnimatedText>
   );
   expect(renderer.getRenderOutput()).toMatchSnapshot();

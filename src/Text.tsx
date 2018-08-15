@@ -1,9 +1,10 @@
 import React from "react";
-import { StyleProp, Text as ReactNativeText, TextStyle } from "react-native";
+import { Text as ReactNativeText } from "react-native";
 import FontStyleWrapper from "./FontStyleWrapper";
+import ExtendedTextStyles from "./types/ExtendedTextStyles";
 
 interface TextProps {
-  style: StyleProp<TextStyle>;
+  style: ExtendedTextStyles;
 }
 
 const Text = ({ style, ...props }: TextProps) => (
