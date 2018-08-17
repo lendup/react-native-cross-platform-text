@@ -5,7 +5,9 @@ import AnimatedTextStyles from './types/AnimatedTextStyles';
 
 interface FontStyleWrapperProps {
   children: (styles: TextStyle) => React.ReactElement<{}>;
-  style: AnimatedTextStyles;
+  // style: AnimatedTextStyles;
+  // https://github.com/DefinitelyTyped/DefinitelyTyped/pull/28164
+  style: any;
 }
 
 const FontStyleWrapper = ({ style, children }: FontStyleWrapperProps) => {

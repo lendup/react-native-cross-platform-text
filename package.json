@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lendup/react-native-text"
+    "url": "https://github.com/lendup/react-native-cross-platform-text"
   },
   "keywords": [
     "react",
