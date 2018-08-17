@@ -1,28 +1,30 @@
 import * as React from "react";
-import { Platform, Animated, StyleSheet, TextStyle } from "react-native";
-import * as ShallowRenderer from "react-test-renderer/shallow";
+import { Platform, Animated } from "react-native";
+import * as renderer from 'react-test-renderer';
 import AnimatedText from "../AnimatedText";
+import AnimatedTextStyles from '../types/AnimatedTextStyles';
 import mockStyles from '../__mocks__/mockStyles';
 
-jest.mock("Platform");
+jest.mock('Platform');
 
 it("iOS returns fontFamily and weight for normal", () => {
-  Platform.OS = "ios";
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(<AnimatedText style={mockStyles.fontStyle}>this is iOS</AnimatedText>);
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  Platform.OS = 'ios';
+  const tree = renderer.create(
+    <AnimatedText style={mockStyles.fontStyle}>this is iOS</AnimatedText>
+  );
+  expect(tree).toMatchSnapshot();
 });
 
 it("Android returns fontFamily-Regular and weight = undefined for normal", () => {
-  Platform.OS = "android";
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(<AnimatedText style={mockStyles.fontStyle}>this is Android</AnimatedText>);
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  Platform.OS = 'android';
+  const tree = renderer.create(
+    <AnimatedText style={mockStyles.fontStyle}>this is Android</AnimatedText>
+  );
+  expect(tree).toMatchSnapshot();
 });
 
 it("flattens styles", () => {
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(
+  const tree = renderer.create(
     <AnimatedText
       style={[
         mockStyles.section,
@@ -30,31 +32,29 @@ it("flattens styles", () => {
       ]}
     >works with nested styles!</AnimatedText>
   );
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  expect(tree).toMatchSnapshot();
 });
 
 it("works with animated styles", () => {
   const animatedValue = new Animated.Value(12);
-  const animatedStyle = {
+  const animatedStyle: AnimatedTextStyles = {
     fontSize: animatedValue,
     transform: [{ translateY: animatedValue }],
   };
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(
+  const tree = renderer.create(
     <AnimatedText
       style={[mockStyles.fontStyle, animatedStyle]}
-    >works with nested styles!</AnimatedText>
+    >works with animated styles!</AnimatedText>
   );
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  expect(tree).toMatchSnapshot();
 });
 
 it("passes Animated.Text props through", () => {
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(
+  const tree = renderer.create(
     <AnimatedText
       style={mockStyles.fontStyle}
       allowFontScaling={false}
-    >works with nested styles!</AnimatedText>
+    >passes props through!</AnimatedText>
   );
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
-})
+  expect(tree).toMatchSnapshot();
+});

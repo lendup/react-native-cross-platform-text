@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const mockStyles = StyleSheet.create({
+const doMockStyles = StyleSheet.create({
   fontStyle: {
     fontWeight: 'normal',
     fontFamily: 'Arial',
@@ -13,4 +13,4 @@ const mockStyles = StyleSheet.create({
   },
 });
 
-export default mockStyles;
+export default doMockStyles;

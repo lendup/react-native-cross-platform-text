@@ -1,28 +1,25 @@
 import * as React from "react";
 import { Platform } from "react-native";
-import * as ShallowRenderer from "react-test-renderer/shallow";
+import * as renderer from 'react-test-renderer';
 import Text from "../Text";
 import mockStyles from '../__mocks__/mockStyles';
 
-jest.mock("Platform");
+jest.mock('Platform');
 
 it("iOS returns fontFamily and weight for normal", () => {
-  Platform.OS = "ios";
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(<Text style={mockStyles.fontStyle}>this is iOS</Text>);
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  Platform.OS = 'ios';
+  const tree = renderer.create(<Text style={mockStyles.fontStyle}>this is iOS</Text>);
+  expect(tree).toMatchSnapshot();
 });
 
 it("Android returns fontFamily-Regular and weight = undefined for normal", () => {
-  Platform.OS = "android";
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(<Text style={mockStyles.fontStyle}>this is Android</Text>);
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  Platform.OS = 'android';
+  const tree = renderer.create(<Text style={mockStyles.fontStyle}>this is Android</Text>);
+  expect(tree).toMatchSnapshot();
 });
 
 it("flattens styles", () => {
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(
+  const tree = renderer.create(
     <Text
       style={[
         mockStyles.section,
@@ -30,16 +27,15 @@ it("flattens styles", () => {
       ]}
     >works with nested styles!</Text>
   );
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  expect(tree).toMatchSnapshot();
 });
 
 it("passes Text props through", () => {
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(
+  const tree = renderer.create(
     <Text
       style={mockStyles.fontStyle}
       allowFontScaling={false}
-    >works with nested styles!</Text>
+    >passes through props!</Text>
   );
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
-})
+  expect(tree).toMatchSnapshot();
+});

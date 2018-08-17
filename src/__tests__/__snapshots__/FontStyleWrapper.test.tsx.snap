@@ -11,7 +11,9 @@ exports[`Android returns fontFamily-Regular and weight = undefined for normal 1`
       "fontWeight": undefined,
     }
   }
-/>
+>
+  this is Android
+</Text>
 `;
 
 exports[`flattens styles 1`] = `
@@ -21,13 +23,15 @@ exports[`flattens styles 1`] = `
   ellipsizeMode="tail"
   style={
     Object {
-      "fontFamily": "Arial-Regular",
-      "fontWeight": undefined,
+      "fontFamily": "Arial",
+      "fontWeight": "normal",
       "margin": 20,
       "paddingHorizontal": 10,
     }
   }
-/>
+>
+  }works with nested styles!
+</Text>
 `;
 
 exports[`iOS returns fontFamily and weight for normal 1`] = `
@@ -41,5 +45,7 @@ exports[`iOS returns fontFamily and weight for normal 1`] = `
       "fontWeight": "normal",
     }
   }
-/>
+>
+  this is iOS
+</Text>
 `;

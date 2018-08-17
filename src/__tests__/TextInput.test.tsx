@@ -1,28 +1,25 @@
 import * as React from "react";
 import { Platform } from "react-native";
-import * as ShallowRenderer from "react-test-renderer/shallow";
+import * as renderer from 'react-test-renderer';
 import TextInput from "../TextInput";
 import mockStyles from '../__mocks__/mockStyles';
 
-jest.mock("Platform");
+jest.mock('Platform');
 
 it("iOS returns fontFamily and weight for normal", () => {
-  Platform.OS = "ios";
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(<TextInput style={mockStyles.fontStyle}>this is iOS</TextInput>);
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  Platform.OS = 'ios';
+  const tree = renderer.create(<TextInput style={mockStyles.fontStyle}>this is iOS</TextInput>);
+  expect(tree).toMatchSnapshot();
 });
 
 it("Android returns fontFamily-Regular and weight = undefined for normal", () => {
-  Platform.OS = "android";
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(<TextInput style={mockStyles.fontStyle}>this is Android</TextInput>);
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  Platform.OS = 'android';
+  const tree = renderer.create(<TextInput style={mockStyles.fontStyle}>this is Android</TextInput>);
+  expect(tree);
 });
 
 it("flattens styles", () => {
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(
+  const tree = renderer.create(
     <TextInput
       style={[
         mockStyles.section,
@@ -30,16 +27,15 @@ it("flattens styles", () => {
       ]}
     >works with nested styles!</TextInput>
   );
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
+  expect(tree).toMatchSnapshot();
 });
 
 it("passes TextInput props through", () => {
-  const renderer = ShallowRenderer.createRenderer();
-  renderer.render(
+  const tree = renderer.create(
     <TextInput
       style={mockStyles.fontStyle}
-      allowFontScaling={false}
-    >works with nested styles!</TextInput>
+      defaultValue="Amazing"
+    >passes props through!</TextInput>
   );
-  expect(renderer.getRenderOutput()).toMatchSnapshot();
-})
+  expect(tree).toMatchSnapshot();
+});

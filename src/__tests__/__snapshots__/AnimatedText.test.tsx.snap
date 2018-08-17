@@ -1,43 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Android returns fontFamily-Regular and weight = undefined for normal 1`] = `
-<FontStyleWrapper
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
   style={
     Object {
-      "fontFamily": "Arial",
-      "fontWeight": "normal",
+      "fontFamily": "Arial-Regular",
+      "fontWeight": undefined,
     }
   }
 >
-  [Function]
-</FontStyleWrapper>
+  this is Android
+</Text>
 `;
 
 exports[`flattens styles 1`] = `
-<FontStyleWrapper
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "paddingHorizontal": 10,
-      },
-      Array [
-        Object {
-          "margin": 20,
-        },
-        Object {
-          "fontFamily": "Arial",
-          "fontWeight": "normal",
-        },
-      ],
-    ]
+    Object {
+      "fontFamily": "Arial",
+      "fontWeight": "normal",
+      "margin": 20,
+      "paddingHorizontal": 10,
+    }
   }
 >
-  [Function]
-</FontStyleWrapper>
+  works with nested styles!
+</Text>
 `;
 
 exports[`iOS returns fontFamily and weight for normal 1`] = `
-<FontStyleWrapper
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
   style={
     Object {
       "fontFamily": "Arial",
@@ -45,12 +46,15 @@ exports[`iOS returns fontFamily and weight for normal 1`] = `
     }
   }
 >
-  [Function]
-</FontStyleWrapper>
+  this is iOS
+</Text>
 `;
 
 exports[`passes Animated.Text props through 1`] = `
-<FontStyleWrapper
+<Text
+  accessible={true}
+  allowFontScaling={false}
+  ellipsizeMode="tail"
   style={
     Object {
       "fontFamily": "Arial",
@@ -58,29 +62,28 @@ exports[`passes Animated.Text props through 1`] = `
     }
   }
 >
-  [Function]
-</FontStyleWrapper>
+  passes props through!
+</Text>
 `;
 
 exports[`works with animated styles 1`] = `
-<FontStyleWrapper
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
   style={
-    Array [
-      Object {
-        "fontFamily": "Arial",
-        "fontWeight": "normal",
-      },
-      Object {
-        "fontSize": 12,
-        "transform": Array [
-          Object {
-            "translateY": 12,
-          },
-        ],
-      },
-    ]
+    Object {
+      "fontFamily": "Arial",
+      "fontSize": 12,
+      "fontWeight": "normal",
+      "transform": Array [
+        Object {
+          "translateY": 12,
+        },
+      ],
+    }
   }
 >
-  [Function]
-</FontStyleWrapper>
+  works with animated styles!
+</Text>
 `;

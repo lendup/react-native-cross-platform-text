@@ -1,43 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Android returns fontFamily-Regular and weight = undefined for normal 1`] = `
-<FontStyleWrapper
+exports[`flattens styles 1`] = `
+<TextInput
+  allowFontScaling={true}
   style={
     Object {
       "fontFamily": "Arial",
       "fontWeight": "normal",
+      "margin": 20,
+      "paddingHorizontal": 10,
     }
   }
 >
-  [Function]
-</FontStyleWrapper>
-`;
-
-exports[`flattens styles 1`] = `
-<FontStyleWrapper
-  style={
-    Array [
-      Object {
-        "paddingHorizontal": 10,
-      },
-      Array [
-        Object {
-          "margin": 20,
-        },
-        Object {
-          "fontFamily": "Arial",
-          "fontWeight": "normal",
-        },
-      ],
-    ]
-  }
->
-  [Function]
-</FontStyleWrapper>
+  works with nested styles!
+</TextInput>
 `;
 
 exports[`iOS returns fontFamily and weight for normal 1`] = `
-<FontStyleWrapper
+<TextInput
+  allowFontScaling={true}
   style={
     Object {
       "fontFamily": "Arial",
@@ -45,12 +26,14 @@ exports[`iOS returns fontFamily and weight for normal 1`] = `
     }
   }
 >
-  [Function]
-</FontStyleWrapper>
+  this is iOS
+</TextInput>
 `;
 
 exports[`passes TextInput props through 1`] = `
-<FontStyleWrapper
+<TextInput
+  allowFontScaling={true}
+  defaultValue="Amazing"
   style={
     Object {
       "fontFamily": "Arial",
@@ -58,6 +41,6 @@ exports[`passes TextInput props through 1`] = `
     }
   }
 >
-  [Function]
-</FontStyleWrapper>
+  passes props through!
+</TextInput>
 `;

@@ -3,7 +3,7 @@ import { Platform, TextStyle } from "react-native";
 type FontWeight = TextStyle["fontWeight"];
 
 const getFontStyleForWeight = (fontFamily?: string, fontWeight?: FontWeight) => {
-  if (Platform.OS === "ios") { return { fontFamily, fontWeight }; }
+  if (Platform.OS === 'ios') { return { fontFamily, fontWeight }; }
   switch (fontWeight) {
     case "normal": return { fontFamily: `${fontFamily}-Regular`, fontWeight: undefined };
     case "bold": return { fontFamily: `${fontFamily}-Bold`, fontWeight: undefined };
@@ -16,7 +16,11 @@ const getFontStyleForWeight = (fontFamily?: string, fontWeight?: FontWeight) => 
     case "700": return { fontFamily: `${fontFamily}-Bold`, fontWeight: undefined };
     case "800": return { fontFamily: `${fontFamily}-ExtraBold`, fontWeight: undefined };
     case "900": return { fontFamily: `${fontFamily}-Black`, fontWeight: undefined };
-    default: return {};
+    default: {
+      return fontFamily
+        ? { fontFamily: `${fontFamily}-Regular`, fontWeight: undefined }
+        : {};
+    }
   }
 };
 

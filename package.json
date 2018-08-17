@@ -23,7 +23,8 @@
   "private": false,
   "scripts": {
     "test": "jest",
-    "updateSnapshot": "jest --updateSnapshot"
+    "updateSnapshot": "jest --updateSnapshot",
+    "lint": "tslint -c tslint.json 'src/**/*.ts*'"
   },
   "jest": {
     "preset": "react-native",
@@ -46,7 +47,8 @@
       "\\.snap$",
       "<rootDir>/node_modules/"
     ],
-    "clearMocks": true
+    "cleardoMocks": true,
+    "resetModules": true
   },
   "peerDependencies": {
     "react": ">=15.0.0",
