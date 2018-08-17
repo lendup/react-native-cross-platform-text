@@ -15,7 +15,7 @@ it("iOS returns fontFamily and weight for normal", () => {
 it("Android returns fontFamily-Regular and weight = undefined for normal", () => {
   Platform.OS = 'android';
   const tree = renderer.create(<TextInput style={mockStyles.fontStyle}>this is Android</TextInput>);
-  expect(tree);
+  expect(tree).toMatchSnapshot();
 });
 
 it("flattens styles", () => {

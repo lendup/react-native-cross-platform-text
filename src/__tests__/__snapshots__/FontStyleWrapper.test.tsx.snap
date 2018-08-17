@@ -30,7 +30,7 @@ exports[`flattens styles 1`] = `
     }
   }
 >
-  }works with nested styles!
+  works with nested styles!
 </Text>
 `;
 

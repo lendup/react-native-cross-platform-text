@@ -1,5 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Android returns fontFamily-Regular and weight = undefined for normal 1`] = `
+<TextInput
+  allowFontScaling={true}
+  style={
+    Object {
+      "fontFamily": "Arial-Regular",
+      "fontWeight": undefined,
+    }
+  }
+>
+  this is Android
+</TextInput>
+`;
+
 exports[`flattens styles 1`] = `
 <TextInput
   allowFontScaling={true}

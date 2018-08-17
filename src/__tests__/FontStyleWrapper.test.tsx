@@ -34,7 +34,7 @@ it("flattens styles", () => {
         [mockStyles.container, mockStyles.fontStyle],
       ]}
     >
-      {(fontStyle) => <Text style={fontStyle}>}works with nested styles!</Text>}
+      {(fontStyle) => <Text style={fontStyle}>works with nested styles!</Text>}
     </FontStyleWrapper>,
   );
   expect(tree).toMatchSnapshot();

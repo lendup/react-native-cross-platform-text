@@ -7,7 +7,6 @@ interface AnimatedTextProps {
   // https://basarat.gitbooks.io/typescript/docs/types/index-signatures.html
   [k: string]: any;
   style: AnimatedTextStyles;
-  // style: any;
 }
 
 const AnimatedText = ({ style, ...props }: AnimatedTextProps) => (
