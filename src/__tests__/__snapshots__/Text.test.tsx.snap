@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Android returns fontFamily-Regular and weight = undefined for normal 1`] = `
+<FontStyleWrapper
+  style={
+    Object {
+      "fontFamily": "Arial",
+      "fontWeight": "normal",
+    }
+  }
+>
+  [Function]
+</FontStyleWrapper>
+`;
+
+exports[`flattens styles 1`] = `
+<FontStyleWrapper
+  style={
+    Array [
+      Object {
+        "paddingHorizontal": 10,
+      },
+      Array [
+        Object {
+          "margin": 20,
+        },
+        Object {
+          "fontFamily": "Arial",
+          "fontWeight": "normal",
+        },
+      ],
+    ]
+  }
+>
+  [Function]
+</FontStyleWrapper>
+`;
+
+exports[`iOS returns fontFamily and weight for normal 1`] = `
+<FontStyleWrapper
+  style={
+    Object {
+      "fontFamily": "Arial",
+      "fontWeight": "normal",
+    }
+  }
+>
+  [Function]
+</FontStyleWrapper>
+`;
+
+exports[`passes Text props through 1`] = `
+<FontStyleWrapper
+  style={
+    Object {
+      "fontFamily": "Arial",
+      "fontWeight": "normal",
+    }
+  }
+>
+  [Function]
+</FontStyleWrapper>
+`;

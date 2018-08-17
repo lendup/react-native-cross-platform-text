@@ -2,7 +2,7 @@ import * as React from "react";
 import { Platform } from "react-native";
 import * as ShallowRenderer from "react-test-renderer/shallow";
 import Text from "../Text";
-import mockStyles from './__mocks__/mockStyles';
+import mockStyles from '../__mocks__/mockStyles';
 
 jest.mock("Platform");
 
@@ -32,3 +32,14 @@ it("flattens styles", () => {
   );
   expect(renderer.getRenderOutput()).toMatchSnapshot();
 });
+
+it("passes Text props through", () => {
+  const renderer = ShallowRenderer.createRenderer();
+  renderer.render(
+    <Text
+      style={mockStyles.fontStyle}
+      allowFontScaling={false}
+    >works with nested styles!</Text>
+  );
+  expect(renderer.getRenderOutput()).toMatchSnapshot();
+})

@@ -2,7 +2,7 @@ import * as React from "react";
 import { Platform, Text } from "react-native";
 import * as ShallowRenderer from "react-test-renderer/shallow";
 import FontStyleWrapper from "../FontStyleWrapper";
-import mockStyles from './__mocks__/mockStyles';
+import mockStyles from '../__mocks__/mockStyles';
 
 jest.mock("Platform");
 

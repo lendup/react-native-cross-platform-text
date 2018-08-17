@@ -1,10 +1,11 @@
-import React from "react";
-import { Text as ReactNativeText } from "react-native";
+import * as React from "react";
+import { Text as ReactNativeText, StyleProp, TextStyle } from "react-native";
 import FontStyleWrapper from "./FontStyleWrapper";
-import ExtendedTextStyles from "./types/ExtendedTextStyles";
 
 interface TextProps {
-  style: ExtendedTextStyles;
+  // https://basarat.gitbooks.io/typescript/docs/types/index-signatures.html
+  [k: string]: any;
+  style: StyleProp<TextStyle>;
 }
 
 const Text = ({ style, ...props }: TextProps) => (

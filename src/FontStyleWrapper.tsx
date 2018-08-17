@@ -1,11 +1,11 @@
-import React from "react";
+import * as React from "react";
 import { StyleSheet, StyleProp, TextStyle } from "react-native";
 import getFontStyleForWeight from "./getFontStyleForWeight";
-import ExtendedTextStyles from "./types/ExtendedTextStyles";
+import AnimatedTextStyles from './types/AnimatedTextStyles';
 
 interface FontStyleWrapperProps {
   children: (styles: TextStyle) => React.ReactElement<{}>;
-  style: ExtendedTextStyles;
+  style: AnimatedTextStyles;
 }
 
 const FontStyleWrapper = ({ style, children }: FontStyleWrapperProps) => {
