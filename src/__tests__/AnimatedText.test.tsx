@@ -2,7 +2,6 @@ import * as React from "react";
 import { Platform, Animated } from "react-native";
 import * as renderer from 'react-test-renderer';
 import AnimatedText from "../AnimatedText";
-import AnimatedTextStyles from '../types/AnimatedTextStyles';
 import mockStyles from '../__mocks__/mockStyles';
 
 jest.mock('Platform');
@@ -37,7 +36,7 @@ it("flattens styles", () => {
 
 it("works with animated styles", () => {
   const animatedValue = new Animated.Value(12);
-  const animatedStyle: AnimatedTextStyles = {
+  const animatedStyle = {
     fontSize: animatedValue,
     transform: [{ translateY: animatedValue }],
   };
