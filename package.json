@@ -1,8 +1,8 @@
 {
-  "name": "react-native-text",
+  "name": "react-native-cross-platform-text",
   "version": "0.1.0",
   "description": "Shim consolidating Android and iOS font family and font weight APIs into a single, easy-to-use, crossplatform API",
-  "main": "index.js",
+  "main": "dist/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/lendup/react-native-cross-platform-text"
