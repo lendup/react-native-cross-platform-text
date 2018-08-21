@@ -54,7 +54,7 @@
     // "skipLibCheck": true                   /* don't check d.ts for imported libs (cole) */
   },
   "exclude": [
-    "./node_modules/*",
-    "./src/__tests__/*"
+    "./src/__tests__/*",
+    "./src/__mocks__/*",
   ]
 }
