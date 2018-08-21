@@ -23,6 +23,7 @@
   "private": false,
   "scripts": {
     "test": "jest",
+    "test-ci": "jest --coverage",
     "updateSnapshot": "jest --updateSnapshot",
     "lint": "tslint -c tslint.json 'src/**/*.ts*'"
   },
