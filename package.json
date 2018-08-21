@@ -47,7 +47,6 @@
       "\\.snap$",
       "<rootDir>/node_modules/"
     ],
-    "cleardoMocks": true,
     "resetModules": true
   },
   "peerDependencies": {

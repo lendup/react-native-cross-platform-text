@@ -3,15 +3,15 @@ import { StyleSheet, StyleProp, TextStyle } from "react-native";
 import getFontStyleForWeight from "./getFontStyleForWeight";
 
 interface FontStyleWrapperProps {
-  children: (styles: TextStyle) => React.ReactElement<{}>;
+  children: (updatedStyle: StyleProp<TextStyle>) => React.ReactElement<{}>;
   style: StyleProp<TextStyle>;
 }
 
 const FontStyleWrapper = ({ style, children }: FontStyleWrapperProps) => {
   const flatStyle = StyleSheet.flatten(style);
   const fontStyleForWeight = getFontStyleForWeight(flatStyle.fontFamily, flatStyle.fontWeight);
-  const styles = Object.assign({}, flatStyle, fontStyleForWeight);
-  return children(styles);
+  const updatedStyle = Object.assign({}, flatStyle, fontStyleForWeight);
+  return children(updatedStyle);
 };
 
 export default FontStyleWrapper;
