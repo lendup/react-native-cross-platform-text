@@ -19,7 +19,7 @@
     "ios"
   ],
   "author": "LendUp",
-  "license": "MIT",
+  "license": "Apache License, Version 2.0",
   "private": false,
   "scripts": {
     "test": "jest",
@@ -27,6 +27,7 @@
     "updateSnapshot": "jest --updateSnapshot",
     "lint": "tslint -c tslint.json 'src/**/*.ts*'"
   },
+  "files": ["./dist/*"],
   "jest": {
     "preset": "react-native",
     "globals": {
