@@ -1,6 +1,6 @@
 # react-native-cross-platform-text
 
-Crossplatform `Text` shim, consolidating iOS and Android font weight and font family APIs.
+Crossplatform Text shim, consolidating iOS and Android font weight and font family APIs.
 
 ## Installation
 
