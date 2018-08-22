@@ -1,6 +1,6 @@
 {
   "name": "react-native-cross-platform-text",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shim consolidating Android and iOS font family and font weight APIs into a single, easy-to-use, crossplatform API",
   "main": "dist/index.js",
   "repository": {
@@ -28,7 +28,9 @@
     "updateSnapshot": "jest --updateSnapshot",
     "lint": "tslint -c tslint.json 'src/**/*.ts*'"
   },
-  "files": ["./dist/*"],
+  "files": [
+    "./dist/*"
+  ],
   "jest": {
     "preset": "react-native",
     "globals": {
