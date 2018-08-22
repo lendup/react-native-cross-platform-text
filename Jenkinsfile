@@ -40,7 +40,8 @@ builderNode {
             -i \
             -e NPM_USERNAME \
             -e NPM_PASSWORD \
-            -e NPM_REGISTRY=https://artifactory.gameofloans.com/artifactory/api/npm/npm/ \
+            -e NPM_EMAIL="$NPM_USERNAME@lendup.com" \
+            -e NPM_REGISTRY_URL=https://artifactory.gameofloans.com/artifactory/api/npm/npm/ \
             -v $(pwd):/usr/src/app \
             docker.gameofloans.com/nodejs/publisher
         '''
