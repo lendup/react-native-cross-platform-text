@@ -28,7 +28,7 @@ builderNode {
   }
 
   stage("compile") {
-    sh(dockerRun("tsc"))
+    sh(dockerRun("yarn compile"))
   }
 
   if (env.BRANCH_NAME == "master" || env.BRANCH_NAME =~ /^v(\d)([\d\.])*$/) {
