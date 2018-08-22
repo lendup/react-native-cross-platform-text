@@ -63,5 +63,20 @@ animatedText: {
 }
 ```
 
-To get the most out of this library, please ensure your custom fonts are correctly imported, and follow the naming conventions as they have been declared in *FILE LINK*.
+To get the most out of this library, please ensure your custom font files are correctly imported and that they follow these naming conventions, i.e.:
+
+```
+MyFont-Regular.ttf
+MyFont-Bold.ttf
+MyFont-Thin.ttf
+MyFont-ExtraLight.ttf
+MyFont-Medium.ttf
+MyFont-SemiBold.ttf
+MyFont-Bold.ttf
+MyFont-ExtraBold.ttf
+MyFont-Black.ttf
+```
+
+as this is how the [library](https://github.com/lendup/react-native-cross-platform-text/blob/master/src/getFontStyleForWeight.ts) will map font weights.
+
 
