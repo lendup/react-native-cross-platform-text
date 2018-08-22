@@ -18,7 +18,7 @@ import * as React from "react";
 import { StyleSheet, StyleProp, TextStyle } from "react-native";
 import getFontStyleForWeight from "./getFontStyleForWeight";
 
-interface FontStyleWrapperProps {
+export interface FontStyleWrapperProps {
   children: (updatedStyle: StyleProp<TextStyle>) => React.ReactElement<{}>;
   style: StyleProp<TextStyle>;
 }
