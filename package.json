@@ -1,6 +1,6 @@
 {
   "name": "react-native-cross-platform-text",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Shim consolidating Android and iOS font family and font weight APIs into a single, easy-to-use, crossplatform API",
   "main": "dist/index.js",
   "repository": {
@@ -18,6 +18,9 @@
     "android",
     "ios"
   ],
+  "publishConfig": {
+    "registry": "https://artifactory.gameofloans.com/artifactory/api/npm/npm-dev/"
+  },
   "author": "LendUp",
   "license": "Apache License, Version 2.0",
   "private": false,
