@@ -33,7 +33,7 @@ builderNode {
 
   if (env.BRANCH_NAME == "master" || env.BRANCH_NAME =~ /^v(\d)([\d\.])*$/) {
     stage("publish") {
-      withCredentials([usernameCredentials(id: "jenkins_artifactory.gameofloans.com", prefix: "NPM")]) {
+      withCredentials([usernameCredentials(id: "http://lendup-jenkins_npmjs.com/", prefix: "NPM")]) {
         sh '''
           docker run \
             --rm \
@@ -41,7 +41,6 @@ builderNode {
             -e NPM_USERNAME \
             -e NPM_PASSWORD \
             -e NPM_EMAIL="$NPM_USERNAME@lendup.com" \
-            -e NPM_REGISTRY_URL=https://artifactory.gameofloans.com/artifactory/api/npm/npm/ \
             -v $(pwd):/usr/src/app \
             docker.gameofloans.com/nodejs/publisher
         '''
