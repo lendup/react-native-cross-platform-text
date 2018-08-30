@@ -33,7 +33,7 @@ builderNode {
 
   if (env.BRANCH_NAME == "master" || env.BRANCH_NAME =~ /^v(\d)([\d\.])*$/) {
     stage("publish") {
-      withCredentials([usernameCredentials(id: "http://lendup-jenkins_npmjs.com/", prefix: "NPM")]) {
+      withCredentials([usernameCredentials(id: "lendup-jenkins_npmjs.com", prefix: "NPM")]) {
         sh '''
           docker run \
             --rm \
