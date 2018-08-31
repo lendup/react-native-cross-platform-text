@@ -33,13 +33,12 @@ builderNode {
 
   if (env.BRANCH_NAME == "master" || env.BRANCH_NAME =~ /^v(\d)([\d\.])*$/) {
     stage("publish") {
-      withCredentials([usernameCredentials(id: "lendup-jenkins_npmjs.com", prefix: "NPM")]) {
+      withCredentials([usernameCredentials(id: "lendup-jenkins_npmjs.com_api-token", prefix: "NPM", pwSuffix: "TOKEN")]) {
         sh '''
           docker run \
             --rm \
             -i \
-            -e NPM_USERNAME \
-            -e NPM_PASSWORD \
+            -e NPM_TOKEN \
             -e NPM_EMAIL="$NPM_USERNAME@lendup.com" \
             -v $(pwd):/usr/src/app \
             docker.gameofloans.com/nodejs/publisher
