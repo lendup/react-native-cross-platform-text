@@ -35,12 +35,14 @@ builderNode {
     stage("publish") {
       withCredentials([
         usernameCredentials(id: "lendup-jenkins_npmjs.com_api-token", prefix: "NPM", pwSuffix: "TOKEN"),
-        usernameCredentials(id: "lendup-jenkins_npmjs.com", prefix: "NPM")
+        usernameCredentials(id: "lendup-jenkins_npmjs.com", prefix: "NPM"),
+        stringCredentials(id: "lendup-jenkins_npmjs.com_mfa-secret", variable: "MFA_SECRET")
       ]) {
         sh '''
           docker run \
             --rm \
             -i \
+            -e MFA_SECRET \
             -e NPM_USERNAME \
             -e NPM_PASSWORD \
             -e NPM_TOKEN \
