@@ -1,7 +1,11 @@
 def dockerRun(String cmd) {
+  // Always pass in CODECOV_TOKEN even if it's not set...
+  // Just to keep things simple here and not iterate over
+  // a bunch of env vars.
   return '''docker run \
     --rm \
     -i \
+    -e CODECOV_TOKEN \
     -v $(pwd):/usr/src/app \
     --workdir=/usr/src/app \
     docker.gameofloans.com/node:9.4.0 \
@@ -25,6 +29,14 @@ builderNode {
       currentBuild.result = "UNSTABLE"
     }
     step([$class: 'CloverPublisher', cloverReportDir: 'coverage/'])
+  }
+
+  stage("report coverage") {
+    withCredentials([
+        stringCredentials(id: "react-native-cross-platform-text_codecov.io", variable: "CODECOV_TOKEN")
+      ]) {
+        sh(dockerRun("yarn codecov"))
+      }
   }
 
   stage("compile") {
