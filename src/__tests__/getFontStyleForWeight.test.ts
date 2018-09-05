@@ -4,50 +4,50 @@ import getFontStyleForWeight from "../getFontStyleForWeight";
 const fontFamily = "Arial";
 jest.mock('Platform');
 
-it(`android returns ${fontFamily}-Regular for normal weight`, () => {
-  Platform.OS = 'android';
-  expect(getFontStyleForWeight(fontFamily, "normal"))
-  .toEqual({
-    fontFamily: `${fontFamily}-Regular`,
-    fontWeight: undefined,
-  });
-});
+// it(`android returns ${fontFamily}-Regular for normal weight`, () => {
+//   Platform.OS = 'android';
+//   expect(getFontStyleForWeight(fontFamily, "normal"))
+//   .toEqual({
+//     fontFamily: `${fontFamily}-Regular`,
+//     fontWeight: undefined,
+//   });
+// });
 
-it(`android returns ${fontFamily}-Bold for bold weight`, () => {
-  Platform.OS = 'android';
-  expect(getFontStyleForWeight(fontFamily, "bold"))
-  .toEqual({
-    fontFamily: `${fontFamily}-Bold`,
-    fontWeight: undefined,
-  });
-});
+// it(`android returns ${fontFamily}-Bold for bold weight`, () => {
+//   Platform.OS = 'android';
+//   expect(getFontStyleForWeight(fontFamily, "bold"))
+//   .toEqual({
+//     fontFamily: `${fontFamily}-Bold`,
+//     fontWeight: undefined,
+//   });
+// });
 
-it(`android returns ${fontFamily}-Thin for 100 weight`, () => {
-  Platform.OS = 'android';
-  expect(getFontStyleForWeight(fontFamily, "100"))
-  .toEqual({
-    fontFamily: `${fontFamily}-Thin`,
-    fontWeight: undefined,
-  });
-});
+// it(`android returns ${fontFamily}-Thin for 100 weight`, () => {
+//   Platform.OS = 'android';
+//   expect(getFontStyleForWeight(fontFamily, "100"))
+//   .toEqual({
+//     fontFamily: `${fontFamily}-Thin`,
+//     fontWeight: undefined,
+//   });
+// });
 
-it(`android returns ${fontFamily}-ExtraLight for 200 weight`, () => {
-  Platform.OS = 'android';
-  expect(getFontStyleForWeight(fontFamily, "200"))
-  .toEqual({
-    fontFamily: `${fontFamily}-ExtraLight`,
-    fontWeight: undefined,
-  });
-});
+// it(`android returns ${fontFamily}-ExtraLight for 200 weight`, () => {
+//   Platform.OS = 'android';
+//   expect(getFontStyleForWeight(fontFamily, "200"))
+//   .toEqual({
+//     fontFamily: `${fontFamily}-ExtraLight`,
+//     fontWeight: undefined,
+//   });
+// });
 
-it(`android returns ${fontFamily}-Light for 300 weight`, () => {
-  Platform.OS = 'android';
-  expect(getFontStyleForWeight(fontFamily, "300"))
-  .toEqual({
-    fontFamily: `${fontFamily}-Light`,
-    fontWeight: undefined,
-  });
-});
+// it(`android returns ${fontFamily}-Light for 300 weight`, () => {
+//   Platform.OS = 'android';
+//   expect(getFontStyleForWeight(fontFamily, "300"))
+//   .toEqual({
+//     fontFamily: `${fontFamily}-Light`,
+//     fontWeight: undefined,
+//   });
+// });
 
 it(`android returns ${fontFamily}-Regular for 400 weight`, () => {
   Platform.OS = 'android';
