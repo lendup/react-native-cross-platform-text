@@ -29,7 +29,7 @@ builderNode {
 
   stage("report coverage") {
     withCredentials([
-        stringCredentials(id: "http://react-native-cross-platform-text_codecov.io/", variable: "CODECOV_TOKEN")
+        stringCredentials(id: "react-native-cross-platform-text_codecov.io", variable: "CODECOV_TOKEN")
       ]) {
         sh("yarn codecov")
       }
