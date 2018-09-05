@@ -1,5 +1,7 @@
 # react-native-cross-platform-text
 
+[![codecov](https://codecov.io/gh/lendup/react-native-cross-platform-text/branch/master/graph/badge.svg?token=WX4zNL7EPX)](https://codecov.io/gh/lendup/react-native-cross-platform-text)
+
 Crossplatform Text shim, consolidating iOS and Android font weight and font family APIs.
 
 ## Installation

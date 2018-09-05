@@ -27,6 +27,14 @@ builderNode {
     step([$class: 'CloverPublisher', cloverReportDir: 'coverage/'])
   }
 
+  stage("report coverage") {
+    withCredentials([
+        stringCredentials(id: "http://react-native-cross-platform-text_codecov.io/", variable: "CODECOV_TOKEN")
+      ]) {
+        sh("yarn codecov")
+      }
+  }
+
   stage("compile") {
     sh(dockerRun("yarn compile"))
   }
