@@ -7,13 +7,13 @@ Crossplatform Text shim, consolidating iOS and Android font weight and font fami
 ## Installation
 
 ```bash
-yarn add react-native-crossplatform-text
+yarn add react-native-cross-platform-text
 ```
 
 or
 
 ```bash
-npm install --save react-native-crossplatform-text
+npm install --save react-native-cross-platform-text
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ react-native-cross-platform-text exports wrapped React Native Text components an
 
 ```js
 import { View, StyleSheet } from 'react-native';
-import { Text, TextInput, AnimatedText } from 'react-native-crossplatform-text';
+import { Text, TextInput, AnimatedText } from 'react-native-cross-platform-text';
 
 const styles = StyleSheet.create({
   text: {
