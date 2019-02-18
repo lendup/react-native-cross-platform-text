@@ -25,8 +25,13 @@ export interface FontStyleWrapperProps {
 
 const FontStyleWrapper = ({ style, children }: FontStyleWrapperProps) => {
   const flatStyle = StyleSheet.flatten(style);
-  const fontStyleForWeight = getFontStyleForWeight(flatStyle.fontFamily, flatStyle.fontWeight);
-  const updatedStyle = Object.assign({}, flatStyle, fontStyleForWeight);
+  let updatedStyle = Object.assign({}, flatStyle);
+
+  if (flatStyle && (flatStyle.fontFamily && flatStyle.fontWeight)) {
+    const fontStyleForWeight = getFontStyleForWeight(flatStyle.fontFamily, flatStyle.fontWeight);
+    updatedStyle = Object.assign({}, flatStyle, fontStyleForWeight);
+  }
+
   return children(updatedStyle);
 };
 
